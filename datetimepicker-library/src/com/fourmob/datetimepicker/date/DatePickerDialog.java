@@ -6,12 +6,11 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
-import android.support.v4.app.DialogFragment;
+import android.support.v7.app.AppCompatDialogFragment;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
@@ -30,7 +29,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 
-public class DatePickerDialog extends DialogFragment implements View.OnClickListener, DatePickerController {
+public class DatePickerDialog extends AppCompatDialogFragment implements View.OnClickListener, DatePickerController {
 
     private static final String KEY_SELECTED_YEAR = "year";
     private static final String KEY_SELECTED_MONTH = "month";
@@ -274,7 +273,7 @@ public class DatePickerDialog extends DialogFragment implements View.OnClickList
 	}
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup parent, Bundle bundle) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        //getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         this.viewInitialized = true;
         View view = layoutInflater.inflate(R.layout.date_picker_dialog, null);
 
